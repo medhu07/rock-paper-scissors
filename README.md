@@ -1,1 +1,1 @@
-# internshala-automation
+#rock-paper-scissors
