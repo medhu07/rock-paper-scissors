@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="rock-paper-scissors.css">
+  </head>
+  <body>
+    <p class="title">Rock paper scissors</p>
+
+    <button class="move-button" onclick="
+      userChoice = 'rock';
+      computermove();
+      result = '';
+      if (computerChoice === 'rock') {
+        result = 'Tie';
+      } else if (computerChoice === 'scissors') {
+        result = 'You win';
+      } else {
+        result = 'You lose';
+      }
+      updateScore(result);
+      updateScoreElement();
+      updateResultElement();
+      updateMovesElement();
+    ">
+      <img src='rock-emoji.png' class='move-icon'>
+    </button>
+
+    <button class="move-button" onclick="
+      userChoice = 'paper';
+      computermove();
+      result = '';
+      if (computerChoice === 'rock') {
+        result = 'You win';
+      } else if (computerChoice === 'scissors') {
+        result = 'You lose';
+      } else {
+        result = 'Tie';
+      }
+      updateScore(result);
+      updateScoreElement();
+      updateResultElement();
+      updateMovesElement();
+    ">
+      <img src='paper-emoji.png' class='move-icon'>
+    </button>
+
+    <button class="move-button" onclick="
+      userChoice = 'scissors';
+      computermove();
+      result = '';
+      if (computerChoice === 'rock') {
+        result = 'You lose';
+      } else if (computerChoice === 'scissors') {
+        result = 'Tie';
+      } else {
+        result = 'You win';
+      }
+      updateScore(result);
+      updateScoreElement();
+      updateResultElement();
+      updateMovesElement();
+    ">
+      <img src='scissors-emoji.png' class='move-icon'>
+    </button>
+
+    <p class="js-result result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score score"></p>
+
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+      updateScoreElement();
+      alert('Score has been reset');
+    " class="reset-score-button">
+      Reset Score
+    </button>
+
+    <script src="rock-paper-scissors.js"></script>
+  </body>
+</html>
