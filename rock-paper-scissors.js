@@ -46,5 +46,5 @@ let result = '';
         localStorage.setItem('score', JSON.stringify(score));
       }
 
-      // Show score on first load
-      updateScoreElement();
+       // Show score on first load
+      // updateScoreElement();
